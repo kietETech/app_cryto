@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+class CustomButton extends StatelessWidget {
+  final String text;
+  final double size;
+  final Color? colorText;
+  final FontWeight? fontWeight;
+  final void Function()? onPressed;
+  final Color? focusColor;
+  final Color? highlightColor;
+  final AlignmentGeometry? alignment;
+  final Color? colorDecoration;
+  final double opacity;
+  final double spreadRadius;
+  final Offset offset;
+  const CustomButton(
+      {super.key,
+      required this.text,
+      required this.size,
+      this.colorText,
+      this.fontWeight,
+      this.onPressed,
+      this.focusColor,
+      this.highlightColor,
+      this.alignment,
+      this.colorDecoration,
+      required this.opacity,
+      required this.spreadRadius,
+      required this.offset});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      splashColor: Colors.blue,
+      onTap: onPressed,
+      focusColor: focusColor,
+      highlightColor: highlightColor,
+      child: Container(
+          height: 50,
+          width: double.infinity,
+          alignment: alignment,
+          decoration: BoxDecoration(
+            color: colorDecoration,
+            borderRadius: BorderRadius.circular(4),
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: opacity,
+                  spreadRadius: spreadRadius,
+                  offset: offset)
+            ],
+          ),
+          child: Text(
+            text,
+            style: TextStyle(
+                fontSize: size, fontWeight: fontWeight, color: colorText),
+          )),
+    );
+  }
+}
