@@ -5,7 +5,6 @@ import 'package:hcm_client_app/component/to_Signup.dart';
 import 'component/addText.dart';
 import 'package:flutter/material.dart';
 import 'component/custom_Button.dart';
-import 'component/test_button.dart';
 
 // ignore: camel_case_types
 class Login_Page extends StatelessWidget {
@@ -120,9 +119,9 @@ class Login_Page extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const WaterDropEffect(
-                  sideLength: 10,
-                ),
+                // const WaterDropEffect(
+                //   sideLength: 10,
+                // ),
                 const toSignup(
                     heght: 50,
                     colorText: Colors.cyan,
